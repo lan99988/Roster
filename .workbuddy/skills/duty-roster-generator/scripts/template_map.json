@@ -1,0 +1,41 @@
+{
+  "sheet": "8月排班表",
+  "date_cell": "A3",
+  "note_cell": "A19",
+  "gate_tail": "17:30后 向荣                18:00-21:00(闭馆）：\n延昂、少鸿",
+  "post_match": {
+    "游客服务驿站": "游客服务驿站",
+    "门口指引、闸机": "门口指引、闸机",
+    "正堂音响/园区广播": "正堂音响",
+    "演艺控场": "演艺控场",
+    "视频号宣传": "视频号宣传",
+    "开衙/巡府": "开衙",
+    "免费讲解": "免费讲解",
+    "侨批展邮政文创摊位": "侨批展邮政文创摊位",
+    "行政事务/巡园/机动岗位": "行政事务"
+  },
+  "demands": [
+    {"key": "宣传", "match": "视频号宣传", "col": "C", "count": 1, "tags": ["宣传"], "fallback": null, "block": "am", "renderer": "宣传", "optional": true},
+    {"key": "音响上午", "match": "正堂音响", "col": "B", "count": 1, "tags": ["技术", "负责人"], "fallback": ["技术"], "block": "am", "renderer": "音响上午"},
+    {"key": "音响下午", "match": "正堂音响", "col": "D", "count": 1, "tags": ["技术", "负责人"], "fallback": ["技术"], "block": "pm", "renderer": "音响下午"},
+    {"key": "行政上午", "match": "行政事务", "col": "B", "count": 1, "tags": ["负责人"], "fallback": null, "block": "am", "renderer": "行政上午", "optional": true, "pair_with": "音响上午"},
+    {"key": "行政下午", "match": "行政事务", "col": "D", "count": 1, "tags": ["负责人"], "fallback": null, "block": "pm", "renderer": "行政下午", "optional": true, "pair_with": "音响下午"},
+    {"key": "演艺上午", "match": "演艺控场", "col": "C", "count": 1, "tags": ["主持人"], "fallback": null, "block": "am", "renderer": "演艺上午"},
+    {"key": "开衙", "match": "开衙", "col": "C", "count": 2, "tags": ["主持人"], "fallback": null, "block": "am", "renderer": "开衙"},
+    {"key": "讲解11:30", "match": "免费讲解", "col": "C", "count": 1, "tags": ["主持人"], "fallback": null, "block": "am", "renderer": "讲解11:30"},
+    {"key": "演艺下午", "match": "演艺控场", "col": "D", "count": 1, "tags": ["主持人"], "fallback": null, "block": "pm", "renderer": "演艺下午"},
+    {"key": "讲解16:30", "match": "免费讲解", "col": "D", "count": 1, "tags": ["主持人"], "fallback": null, "block": "pm", "renderer": "讲解16:30"},
+    {"key": "驿站上午", "match": "游客服务驿站", "col": "B", "count": 2, "tags": ["女"], "fallback": null, "block": "am", "renderer": "驿站上午"},
+    {"key": "驿站下午", "match": "游客服务驿站", "col": "D", "count": 2, "tags": ["女"], "fallback": null, "block": "pm", "renderer": "驿站下午"},
+    {"key": "侨批上午", "match": "侨批展邮政文创摊位", "col": "B", "count": 1, "tags": ["女"], "fallback": [], "block": "am", "renderer": "侨批上午"},
+    {"key": "侨批协同", "match": "侨批展邮政文创摊位", "col": "C", "count": 1, "tags": [], "fallback": null, "block": "am", "renderer": "侨批协同", "prefer_general": true},
+    {"key": "侨批下午", "match": "侨批展邮政文创摊位", "col": "D", "count": 1, "tags": [], "fallback": null, "block": "pm", "renderer": "侨批下午", "prefer_general": true},
+    {"key": "闸机开馆", "match": "门口指引、闸机", "col": "B", "count": 1, "tags": [], "fallback": null, "block": "am", "renderer": "闸机开馆", "prefer_general": true},
+    {"key": "闸机关馆", "match": "门口指引、闸机", "col": "D", "count": 1, "tags": [], "fallback": null, "block": "pm", "renderer": "闸机关馆", "prefer_general": true}
+  ],
+  "inquiry_posts": [
+    {"match": "公务讲解", "col": "B"},
+    {"match": "大屏制作", "col": "B"},
+    {"match": "学宫", "col": "B"}
+  ]
+}

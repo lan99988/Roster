@@ -1,0 +1,28 @@
+# ===== 真实数据与隐私（不公开）=====
+输入/
+输出/
+状态/
+值班表.xls
+镇海楼值班表总.xls
+全文件文字提取.txt
+
+# 含真实姓名的过程性分析文档
+其他备注全量对比.md
+成员技能画像_基于历史排班.md
+排班序列颜色规律分析.md
+排班表_其他备注编排规律分析.md
+
+# ===== 本地运行产物 =====
+.workbuddy/memory/
+.workbuddy/binaries/
+.workbuddy/状态/
+*.bak-*
+*.polluted-*
+_quarantine/
+
+# ===== 第三方依赖（运行时用 requirements.txt 安装，或自带 .lib 时勿提交）=====
+.workbuddy/skills/duty-roster-generator/.lib/
+
+# ===== Python =====
+__pycache__/
+*.pyc
