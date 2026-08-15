@@ -91,7 +91,7 @@ description: 镇海楼值班表自动排班。读取「人员.xls」花名册 + 
 `公务讲解 / 大屏制作 / 学宫` 三岗历史常空。每次运行前若用户备注未声明"不需要"，agent 必须用 AskUserQuestion 问用户本轮是否安排这三岗；答案写入 `inquiry` 字段。确认的岗写入"（待安排·请负责人指派）"占位，未确认的留空。
 
 ## 环境
-- **Python ≥ 3.9**（脚本用 `sys.path` 挂载 skill 自带 `.lib/`——内含 xlrd + openpyxl，**无需另行 pip install**）。
+- **Python ≥ 3.9** + 依赖：`pip install -r requirements.txt`（xlrd、openpyxl）。脚本优先用 skill 自带 `.lib/`（若存在），否则回退到 pip 安装的包。
 - 写 .xls 依赖本机 **Microsoft Excel COM**（Windows，Excel 16.0+）。无 Excel 环境则无法写出 .xls（可改用 `write_template_py.py` 纯 Python 通道做降级/测试）。
 - 所有 `.ps1` 必须带 UTF-8 BOM（Windows PowerShell 读中文字面量必需）。
 - 运行入口：`python roster_pipeline.py <changes.json>`（不传参数 = 无变更常规排班）。
